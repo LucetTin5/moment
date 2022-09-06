@@ -1,0 +1,21 @@
+{
+  "name": "moment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/LucetTin5/moment.git",
+  "author": "LucetTin5 <lucettin5@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.0",
+    "@babel/node": "^7.18.10",
+    "@babel/preset-env": "^7.19.0"
+  },
+  "scripts": {
+    "start": "babel-node src/server.js"
+  }
+}
