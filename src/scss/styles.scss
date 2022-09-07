@@ -1,0 +1,36 @@
+// config
+@import "./config/reset";
+@import "./config/variables";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: $textColor;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/static/images/1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid whitesmoke;
+  &:focus {
+    background: rgba(0, 0, 0, 0.2);
+    outline: none;
+    color: $textColor;
+  }
+}
+header {
+  height: 20vh;
+}
+main {
+  height: auto;
+}
+footer {
+  height: 10vh;
+}
