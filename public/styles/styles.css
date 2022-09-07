@@ -139,36 +139,121 @@ table {
 
 body {
   font-family: "Roboto", sans-serif;
-  color: whitesmoke;
+  color: white;
+}
+
+.background {
   width: 100vw;
   height: 100vh;
   background-image: url("/static/images/1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 1.2;
+  position: absolute;
+  z-index: -1;
 }
 
 input {
   background: none;
   border: none;
   border-bottom: 2px solid whitesmoke;
+  padding: 10px 20px;
+  font-size: 1.3em;
 }
 input:focus {
   background: rgba(0, 0, 0, 0.2);
   outline: none;
-  color: whitesmoke;
+  color: white;
 }
 
 header {
-  height: 20vh;
+  height: 25vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+header .header__left, header .header__right {
+  width: 20vw;
+}
+header .header__center {
+  width: 60vw;
+  text-align: center;
+  font-size: 1.3em;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 480px) {
+  header .header__left, header .header__right {
+    width: 0;
+  }
+  header .header__center {
+    width: 100vw;
+  }
 }
 
 main {
-  height: auto;
+  height: 55vh;
+  display: flex;
+  justify-content: space-between;
+}
+main .main__left, main .main__right {
+  width: 20vw;
+}
+main .main__center {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .main__center .clock {
+  font-size: 5em;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}
+main .main__center #todoForm {
+  margin-top: 1em;
 }
 
 footer {
-  height: 10vh;
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer__left, footer .footer__right {
+  width: 30vw;
+}
+footer .footer__center {
+  width: 40vw;
+}
+footer .footer__center .quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  font-style: italic;
+}
+footer .footer__center .quote__content {
+  margin-bottom: 0.4em;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+footer .footer__center .quote__author {
+  font-size: 1em;
+}
+footer .footer__center .quote__author::before {
+  content: "- ";
+}
+footer .footer__center .quote__author::after {
+  content: " -";
+}
+@media screen and (max-width: 480px) {
+  footer .footer__left, footer .footer__right {
+    width: 0;
+  }
+  footer .footer__center {
+    width: 100vw;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

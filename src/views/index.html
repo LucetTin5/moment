@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      rel="shortcut icon"
+      href="/static/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
@@ -12,19 +17,20 @@
     <title>Momentum Clone</title>
   </head>
   <body>
+    <div class="background"></div>
     <header>
       <div class="header__left">
         <!-- favorites Link -->
       </div>
       <div class="header__center">
         <!-- Username input form or Hi to user -->
+        <h2 id="usernameQ">Hello, what is your name?</h2>
+        <h2 id="usernameH2"></h2>
         <form id="usernameForm">
           <input type="text" name="username" id="username" />
         </form>
       </div>
-      <div class="header__right">
-        <!-- Weather information -->
-      </div>
+      <div class="header__right"></div>
     </header>
     <main>
       <div class="main__left">
@@ -32,10 +38,19 @@
       </div>
       <div class="main__center">
         <!-- clock -->
+        <div class="clock">
+          <span id="clock">00:00</span>
+        </div>
         <!-- to do input form -->
         <form id="todoForm">
-          <input type="text" name="todo" id="todo" />
+          <input
+            type="text"
+            name="todo"
+            id="todo"
+            placeholder="Add something to do."
+          />
         </form>
+        <ul class="todos"></ul>
       </div>
       <div class="main__right">
         <!-- ? -->
@@ -47,6 +62,10 @@
       </div>
       <div class="footer__center">
         <!-- quotes -->
+        <div class="quote">
+          <div class="quote__content"></div>
+          <div class="quote__author"></div>
+        </div>
       </div>
       <div class="footer__right">
         <!-- github? -->

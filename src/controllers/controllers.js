@@ -35,27 +35,13 @@ export const readToDos = async (req, res) => {
     console.log(err);
   }
 };
-export const getWeather = async (req, res) => {
-  // const { lat, lon } = req;
-  const lat = 37.5642;
-  const lon = 127.0016;
-  const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}&lang=kr&units=metric`;
-  try {
-    const {
-      data: { weather, main, name },
-    } = await axios.get(URL);
-    console.log(weather, main.temp, name);
-  } catch (err) {
-    console.log(err);
-  }
-};
-export const getQuote = async () => {
+export const getQuote = async (req, res) => {
   const URL = `https://api.quotable.io/random?tags=famous-quotes`;
   try {
     const {
       data: { content, author },
     } = await axios.get(URL);
-    console.log(content, "\n", author);
+    return res.json({ content, author });
   } catch (err) {
     console.log(err);
   }

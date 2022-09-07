@@ -2,6 +2,7 @@ import "dotenv/config";
 
 import "./db.js";
 import "./models/ToDo.js";
+import "./models/User.js";
 
 import app from "./server.js";
 
