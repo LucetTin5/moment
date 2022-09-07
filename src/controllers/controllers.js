@@ -4,10 +4,13 @@ import axios from "axios";
 export const createToDo = async (req, res) => {
   const { content } = req.body;
   try {
-    await ToDo.create({
-      content,
+    const newToDo = await ToDo.create({
+      todo: content,
     });
-    return res.sendStatus(201);
+    console.log(newToDo);
+    return res.status(201).json({
+      id: newToDo._id,
+    });
   } catch (err) {
     console.log(err);
     return res.json({
@@ -21,8 +24,11 @@ export const updateToDo = async (req, res) => {
     console.log(err);
   }
 };
-export const deleteToDo = async () => {
+export const deleteToDo = async (req, res) => {
+  const { id } = req.params;
   try {
+    ToDo.findOneAndUpdate({ _id: id }, { $set: { done: true } });
+    return res.status(200);
   } catch (err) {
     console.log(err);
   }
