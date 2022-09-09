@@ -17,5 +17,6 @@ const setTime = () => {
 };
 
 export const clockFunc = () => {
+  setTime();
   setInterval(() => setTime(), 1000);
 };

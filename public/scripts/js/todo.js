@@ -8,9 +8,8 @@ const todoDone = (e) => {
   const { id } = li.dataset;
   fetch("/api/todo/" + id, {
     method: "DELETE",
-  }).then(() => {
-    li.remove();
   });
+  li.remove();
 };
 
 const paintToDo = (content, id) => {

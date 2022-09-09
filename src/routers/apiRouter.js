@@ -10,9 +10,9 @@ import {
 const apiRouter = express.Router();
 
 apiRouter.get("/todo", readToDos);
-apiRouter.post("/todo", createToDo);
-apiRouter.patch("/todo/:id", updateToDo);
 apiRouter.delete("/todo/:id", deleteToDo);
+apiRouter.patch("/todo/:id", updateToDo);
+apiRouter.post("/todo", createToDo);
 apiRouter.get("/quote", getQuote);
 
 export default apiRouter;

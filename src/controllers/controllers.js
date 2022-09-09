@@ -27,10 +27,15 @@ export const updateToDo = async (req, res) => {
 export const deleteToDo = async (req, res) => {
   const { id } = req.params;
   try {
-    ToDo.findOneAndUpdate({ _id: id }, { $set: { done: true } });
+    const result = await ToDo.findOneAndUpdate(
+      { _id: id },
+      { $set: { done: true } }
+    );
+    console.log(result);
     return res.status(200);
   } catch (err) {
     console.log(err);
+    return res.status(400);
   }
 };
 export const readToDos = async (req, res) => {

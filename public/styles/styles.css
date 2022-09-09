@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -182,6 +183,9 @@ header .header__center {
   font-size: 1.3em;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 }
+header .header__center #usernameH2 {
+  font-size: 1.5em;
+}
 @media screen and (max-width: 480px) {
   header .header__left, header .header__right {
     width: 0;
@@ -212,6 +216,19 @@ main .main__center .clock {
 }
 main .main__center #todoForm {
   margin-top: 1em;
+}
+main .main__center .todos {
+  margin-top: 0.4em;
+}
+main .main__center .todos .todo {
+  margin-top: 0.4em;
+  display: flex;
+}
+main .main__center .todos .todo span:first-child {
+  flex: 2;
+}
+main .main__center .todos .todo::before {
+  content: "▫️";
 }
 
 footer {
