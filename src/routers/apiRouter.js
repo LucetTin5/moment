@@ -2,16 +2,17 @@ import express from "express";
 import {
   createToDo,
   readToDos,
-  updateToDo,
   deleteToDo,
   getQuote,
-} from "../controllers/controllers";
+} from "../controllers/Controllers.js";
+
+import { createUser } from "../controllers/UserControllers.js";
 
 const apiRouter = express.Router();
 
-apiRouter.get("/todo", readToDos);
+apiRouter.post("/user", createUser);
+apiRouter.get("/todo/:username", readToDos);
 apiRouter.delete("/todo/:id", deleteToDo);
-apiRouter.patch("/todo/:id", updateToDo);
 apiRouter.post("/todo", createToDo);
 apiRouter.get("/quote", getQuote);
 

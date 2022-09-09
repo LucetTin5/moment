@@ -4,10 +4,6 @@ import express from "express";
 
 const rootRouter = express.Router();
 
-rootRouter.get("/", (req, res) => {
-  const clientIp = req.ip;
-  console.log(clientIp);
-  return res.render("index.html");
-});
+rootRouter.get("/", (req, res) => res.render("main.html"));
 
 export default rootRouter;

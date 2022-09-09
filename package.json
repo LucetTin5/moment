@@ -24,6 +24,6 @@
   "scripts": {
     "dev": "nodemon & yarn sass",
     "start": "babel-node src/init.js",
-    "sass": "sass --watch src/scss/styles.scss public/styles/styles.css"
+    "sass": "sass --watch src/scss/style.scss public/styles/style.css"
   }
 }
