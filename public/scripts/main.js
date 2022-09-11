@@ -34,24 +34,28 @@ const paintToDo = (content, id) => {
 };
 
 const todoForm = (e) => {
+  input.placeholder = "Add something to do.";
   e.preventDefault();
   const value = input.value;
-  input.placeholder = "Add something to do.";
-  fetch("/api/todo", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      username,
-      content: value,
-    }),
-  })
-    .then((res) => res.json())
-    .then(({ id }) => {
-      paintToDo(value, id);
-      input.value = "";
-    });
+  if (value.length < 4) {
+    alert("Todo Item은 4자 이상이어야 합니다.");
+  } else {
+    fetch("/api/todo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        content: value,
+      }),
+    })
+      .then((res) => res.json())
+      .then(({ id }) => {
+        paintToDo(value, id);
+        input.value = "";
+      });
+  }
 };
 
 const userForm = (e) => {
@@ -85,6 +89,7 @@ const userForm = (e) => {
               });
             });
           localStorage.setItem("username", username);
+          input.placeholder = "Add something to do";
           form.addEventListener("submit", todoForm);
         }
       });
@@ -111,7 +116,7 @@ const init = () => {
       });
     form.addEventListener("submit", todoForm);
   }
-
+  // weather func? need https
   clockFunc();
   getQuote();
 };
